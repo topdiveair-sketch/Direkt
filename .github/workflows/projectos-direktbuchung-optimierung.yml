@@ -1,0 +1,29 @@
+name: ProjectOS Direktbuchung Build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate booking site
+        shell: bash
+        run: |
+          test -f index.html
+          grep -qi "Buchungsanfrage" index.html
+      - name: Package current site
+        shell: bash
+        run: |
+          mkdir -p dist
+          zip -r dist/zab-direktbuchung.zip . -x '.git/*' 'dist/*'
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: projectos-direktbuchung
+          path: dist/zab-direktbuchung.zip
+          retention-days: 14
