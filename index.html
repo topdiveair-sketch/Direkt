@@ -1777,20 +1777,8 @@
     let liveBookingCalendarPending = false;
     const DIRECT_BOOKING_DISCOUNT_PERCENT = 5;
     const PRICE_REFRESH_MS = 10 * 60 * 1000;
-    const BACHBLICK_BOOKING_BLOCKS = [
-      { start: "2026-07-24", end: "2026-07-25" },
-      { start: "2026-07-25", end: "2026-07-26" },
-      { start: "2026-08-06", end: "2026-08-07" },
-      { start: "2026-08-08", end: "2026-08-12" },
-      { start: "2026-08-22", end: "2026-08-23" },
-      { start: "2026-08-29", end: "2026-08-30" },
-      { start: "2026-09-04", end: "2026-09-05" },
-      { start: "2026-09-05", end: "2026-09-06" },
-      { start: "2026-09-25", end: "2026-09-28" },
-      { start: "2027-05-01", end: "2027-05-02" },
-      { start: "2027-08-19", end: "2027-08-23" }
-    ];
-    let gartenzimmerBookingBlocks = BACHBLICK_BOOKING_BLOCKS.slice();
+    const GARTENZIMMER_BOOKING_BLOCKS = [];
+    let gartenzimmerBookingBlocks = GARTENZIMMER_BOOKING_BLOCKS.slice();
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
