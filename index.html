@@ -3,8 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zuhause am Bach - Buchungsanfrage</title>
-  <meta name="description" content="Einfache Direktanfrage fuer Zuhause am Bach - Wachau in Aggsbach Markt.">
+  <title>Zuhause am Bach Wachau | Business unter der Woche, Wachau & Jauerling am Wochenende</title>
+  <meta name="description" content="Zuhause am Bach in Aggsbach Markt: Mo-Do ruhige Unterkunft fuer Geschaeftsreisende, Techniker und Monteure; Fr-So ideal fuer Wachau- und Jauerling-Gaeste. Direkt anfragen, WLAN und Parkplatz.">
+  <meta name="keywords" content="Geschaeftsreisende Wachau, Firmenunterkunft Wachau, Monteurzimmer Aggsbach Markt, Business Unterkunft Wachau, Unterkunft Techniker Wachau, Jauerling Unterkunft, Uebernachten Jauerling, Winter Wachau, Aggsbach Markt Unterkunft">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://www.zuhauseambach-wachau.at/">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":["LodgingBusiness","BedAndBreakfast"],
+    "name":"Zuhause am Bach - Wachau",
+    "url":"https://www.zuhauseambach-wachau.at/",
+    "telephone":"+43 664 6437526",
+    "address":{"@type":"PostalAddress","streetAddress":"Aggsbach Markt 82","postalCode":"3641","addressLocality":"Aggsbach Markt","addressRegion":"Niederoesterreich","addressCountry":"AT"},
+    "amenityFeature":[
+      {"@type":"LocationFeatureSpecification","name":"WLAN","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Parkplatz","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Firmenrechnung auf Anfrage","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Fruehstueck auf Vorbestellung","value":true}
+    ],
+    "knowsAbout":["Geschaeftsreisen","Firmenunterkunft","Technikerunterkunft","Monteurunterkunft","Wachau","Jauerling","Welterbesteig","Donauradweg"]
+  }
+  </script>
   <style>
     :root {
       color-scheme: light;
@@ -427,6 +447,30 @@
       color: var(--muted);
       font-size: 14px;
     }
+    .winter-strategy {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .winter-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+      box-shadow: 0 8px 18px rgba(49,31,14,.08);
+    }
+    .winter-card h3 { margin: 0 0 8px; font-size: 22px; }
+    .winter-card p { margin: 0 0 12px; color: var(--muted); }
+    .winter-card ul { margin: 0; padding-left: 20px; }
+    .winter-card li { margin: 5px 0; }
+    .winter-card .btn { display: inline-block; margin-top: 14px; }
+    .business-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--brand);
+      background: var(--soft);
+      border-radius: 6px;
+    }
     .facts {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -599,7 +643,7 @@
     }
     .status.show { display: block; }
     @media (max-width: 980px) {
-      .hero-grid, .room-grid, .facts, .legal-content, .guest-app {
+      .hero-grid, .room-grid, .facts, .legal-content, .guest-app, .winter-strategy {
         grid-template-columns: 1fr;
       }
       .dashboard-strip {
@@ -661,6 +705,7 @@
         <button type="button" data-lang="fr">🇫🇷 FR</button>
       </div>
       <div class="nav-links">
+        <a href="#winter">Winter & Business</a>
         <a href="#zimmer">Zimmer</a>
         <a href="#tipps">Tipps</a>
         <a href="#gaesteapp">Gäste-App</a>
@@ -675,7 +720,7 @@
       <div class="hero-copy">
         <span class="eyebrow">Direkt anfragen ohne Buchungsplattform</span>
         <h1>Zuhause am Bach</h1>
-        <p>Basislager für Donauradweg und Welterbesteig.</p>
+        <p>Mo-Do ruhige Unterkunft für Geschäftsreisende und Techniker. Fr-So Ihr Ausgangspunkt für Wachau, Jauerling, Donauradweg und Welterbesteig.</p>
       </div>
 
       <section class="panel" aria-labelledby="booking-title">
@@ -818,6 +863,43 @@
         <p id="weatherHint">Live-Wetter für Aggsbach Markt wird aktualisiert.</p>
       </section>
     </div>
+
+    <section id="winter" aria-labelledby="winter-title">
+      <div class="section-head">
+        <span class="eyebrow">Winter-Standbein November bis März</span>
+        <h2 id="winter-title">Unter der Woche Business. Am Wochenende Wachau & Jauerling.</h2>
+        <p>Zuhause am Bach verbindet zwei Zielgruppen ohne Preiskampf: Montag bis Donnerstag für Geschäftsreisende, Techniker und einzelne Monteure; Freitag bis Sonntag für Wachau- und Jauerling-Gäste.</p>
+      </div>
+      <div class="winter-strategy">
+        <article class="winter-card">
+          <h3>Mo-Do · Geschäftsreisen & Firmen</h3>
+          <p>Ruhige, persönliche Unterkunft in Aggsbach Markt für berufliche Aufenthalte in der Wachau.</p>
+          <ul>
+            <li>kostenloses WLAN</li>
+            <li>kostenloser Parkplatz</li>
+            <li>Rechnung für Firma/Arbeitgeber auf Anfrage</li>
+            <li>Frühstück auf Vorbestellung</li>
+            <li>ideal für Techniker, Außendienst, Bauleitung und einzelne Monteure</li>
+            <li>Direktanfrage ohne zusätzliche Buchungsplattform</li>
+          </ul>
+          <a class="btn" href="#requestForm">Firmenaufenthalt anfragen</a>
+        </article>
+        <article class="winter-card">
+          <h3>Fr-So · Wachau & Jauerling</h3>
+          <p>Wochenende für Natur, Winterausflug und Wachau-Erlebnis – mit Aggsbach Markt als ruhigem Ausgangspunkt.</p>
+          <ul>
+            <li>Wachau und Welterbesteig</li>
+            <li>Jauerling-Wachau und Naturpark</li>
+            <li>Winterwandern und Ausflüge</li>
+            <li>bei Betrieb: Skiarena Jauerling</li>
+            <li>Donauradweg und regionale Ausflugsziele</li>
+            <li>Direktbuchung zum geprüften Direktpreis</li>
+          </ul>
+          <a class="btn" href="#requestForm">Wochenende anfragen</a>
+        </article>
+      </div>
+      <div class="business-note"><strong>Firmen & wiederkehrende Gäste:</strong> Bei mehreren Nächten oder regelmäßigen Aufenthalten bitte direkt anfragen. Ein passender Firmenpreis wird individuell geprüft, ohne die Wochenendpreise für Freizeitgäste abzusenken.</div>
+    </section>
 
     <section id="zimmer">
       <div class="section-head">
