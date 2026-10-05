@@ -773,9 +773,9 @@
             <label>Zimmer</label>
             <div class="rooms">
               <label class="choice">
-                <input type="radio" name="room" value="Gartenzimmer" data-price="101" checked>
+                <input type="radio" name="room" value="Gartenzimmer" data-price="119" checked>
                 <span><strong>Gartenzimmer</strong><small>bereits buchbar</small></span>
-                <b class="price">101 EUR</b>
+                <b class="price">119 EUR</b>
               </label>
             </div>
           </div>
@@ -1062,7 +1062,7 @@
         "Ein Gartenzimmer, ruhig und persönlich": "One garden room, quiet and personal",
         "Wählen Sie Ihr Wunschzimmer. Verfügbarkeit und Preis werden vor der Bestätigung geprüft.": "Choose your preferred room. Availability and price are checked before confirmation.",
         "Doppelzimmer mit Blick auf den Bach. Gemütlich, ruhig und zum Wohlfühlen.": "Double room with a view of the stream. Cosy, quiet and comfortable.",
-        "ab 101 EUR pro Nacht": "from 101 EUR per night",
+        "ab 119 EUR pro Nacht": "from 101 EUR per night",
         "Wachauer Atmosphäre, warme Details und ein ruhiger Rückzugsort.": "Wachau atmosphere, warm details and a quiet retreat.",
         "derzeit noch nicht buchbar": "not bookable yet",
         "Inspiriert von den Weinbergen der Wachau, ideal für Genießer.": "Inspired by the Wachau vineyards, ideal for connoisseurs.",
@@ -1769,13 +1769,13 @@
     });
     applyLanguage(currentLang, false);
     const LIVE_BOOKING_API_URL = "booking-calendar.json";
-    const LIVE_PRICE_API_URL = "";
+    const LIVE_PRICE_API_URL = "site-config.json";
     let bookingCalendarUpdated = "";
     let bookingCalendarUpdatedIso = "";
     let bookingCalendarMode = "snapshot";
     let liveBookingCalendarLoaded = !LIVE_BOOKING_API_URL;
     let liveBookingCalendarPending = false;
-    const DIRECT_BOOKING_DISCOUNT_PERCENT = 5;
+    let directBookingDiscountPercent = 5;
     const PRICE_REFRESH_MS = 10 * 60 * 1000;
     const GARTENZIMMER_BOOKING_BLOCKS = [];
     let gartenzimmerBookingBlocks = GARTENZIMMER_BOOKING_BLOCKS.slice();
@@ -1889,7 +1889,7 @@
       const roomPrice = room ? Math.round(Number(room.dataset.price || 0)) : 0;
       const roomTotal = n * roomPrice;
       let sum = roomTotal;
-      const discount = sameDayArrival() ? 0 : roomTotal * DIRECT_BOOKING_DISCOUNT_PERCENT / 100;
+      const discount = sameDayArrival() ? 0 : roomTotal * directBookingDiscountPercent / 100;
       for (const extra of selectedExtras()) {
         const price = Number(extra.dataset.price || 0);
         const unit = extra.dataset.unit;
@@ -1911,15 +1911,17 @@
     }
 
     function applyLivePrices(payload) {
-      const rooms = payload && payload.rooms ? payload.rooms : {};
-      for (const [roomName, info] of Object.entries(rooms)) {
-        const roomInput = Array.from(form.querySelectorAll('input[name="room"]')).find((item) => item.value === roomName);
-        const rawPrice = typeof info === "number" ? info : (info.price ?? info.standard);
-        const price = Math.round(Number(rawPrice));
-        if (!roomInput || Number.isNaN(price)) continue;
+      if (!payload) return;
+      const price = Math.round(Number(payload.roomPriceEur));
+      const discountPct = Math.round(Number(payload.directBookingDiscountPercent));
+      const roomInput = form.querySelector('input[name="room"][value="Gartenzimmer"]');
+      if (roomInput && !Number.isNaN(price)) {
         roomInput.dataset.price = String(price);
         const label = roomInput.closest(".choice").querySelector("b.price");
         if (label) label.textContent = money(price);
+      }
+      if (!Number.isNaN(discountPct)) {
+        directBookingDiscountPercent = discountPct;
       }
     }
 
