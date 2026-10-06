@@ -12,17 +12,31 @@
   {
     "@context":"https://schema.org",
     "@type":["LodgingBusiness","BedAndBreakfast"],
-    "name":"Zuhause am Bach - Wachau",
+    "@id":"https://www.zuhauseambach-wachau.at/#lodging",
+    "name":"Zuhause am Bach – Wachau",
+    "alternateName":["Zuhause am Bach Wachau","Zuhause am Bach"],
     "url":"https://www.zuhauseambach-wachau.at/",
     "telephone":"+43 664 6437526",
+    "email":"zuhause.am.bach@outlook.com",
+    "description":"Kleine private Unterkunft in Aggsbach Markt in der Wachau mit genau einem Doppelzimmer, dem Gartenzimmer, fuer maximal zwei Gaeste. Kein ganzes Haus. Geeignet fuer Geschaeftsreisende, Wanderer am Welterbesteig und Radfahrer am Donauradweg.",
     "address":{"@type":"PostalAddress","streetAddress":"Aggsbach Markt 82","postalCode":"3641","addressLocality":"Aggsbach Markt","addressRegion":"Niederoesterreich","addressCountry":"AT"},
+    "numberOfRooms":1,
+    "containsPlace":{
+      "@type":"HotelRoom",
+      "@id":"https://www.zuhauseambach-wachau.at/#gartenzimmer",
+      "name":"Gartenzimmer",
+      "description":"Ein Doppelzimmer fuer maximal zwei Personen.",
+      "occupancy":{"@type":"QuantitativeValue","maxValue":2},
+      "bed":{"@type":"BedDetails","numberOfBeds":1,"typeOfBed":"Double"}
+    },
     "amenityFeature":[
-      {"@type":"LocationFeatureSpecification","name":"WLAN","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Parkplatz","value":true},
-      {"@type":"LocationFeatureSpecification","name":"Firmenrechnung auf Anfrage","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Kostenloses WLAN","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Kostenloser Parkplatz","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Gesicherter Fahrradschuppen","value":true},
+      {"@type":"LocationFeatureSpecification","name":"E-Bike-Ladestation","value":true},
       {"@type":"LocationFeatureSpecification","name":"Fruehstueck auf Vorbestellung","value":true}
     ],
-    "knowsAbout":["Geschaeftsreisen","Firmenunterkunft","Technikerunterkunft","Monteurunterkunft","Wachau","Jauerling","Welterbesteig","Donauradweg"]
+    "knowsAbout":["Geschaeftsreisen","Firmenunterkunft","Technikerunterkunft","Wachau","Jauerling","Welterbesteig Wachau","Donauradweg Wachau","Aggsbach Markt"]
   }
   </script>
   <style>
