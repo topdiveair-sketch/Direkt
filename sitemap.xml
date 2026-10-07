@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://www.zuhauseambach-wachau.at/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.zuhauseambach-wachau.at/jauerling-winter.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/jauerling-winter.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/en/jauerling-winter.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.zuhauseambach-wachau.at/en/jauerling-winter.html" />
+    <xhtml:link rel="alternate" hreflang="cs-CZ" href="https://www.zuhauseambach-wachau.at/cs/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="sk-SK" href="https://www.zuhauseambach-wachau.at/sk/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="hu-HU" href="https://www.zuhauseambach-wachau.at/hu/jauerling-tel.html" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://www.zuhauseambach-wachau.at/pl/jauerling-zima.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.zuhauseambach-wachau.at/jauerling-winter.html" />
+    <changefreq>weekly</changefreq><priority>0.9</priority>
+  </url>
   <url><loc>https://www.zuhauseambach-wachau.at/geschichten-aggsbach-markt.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
