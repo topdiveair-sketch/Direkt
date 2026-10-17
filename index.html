@@ -763,6 +763,13 @@
           <div id="availabilityStatus" class="availability-status note">
             Das Gartenzimmer ist unser einziges Gästezimmer. Verfügbarkeit wird vor der Bestätigung geprüft.
           </div>
+          <section id="alternativeDates" class="availability-status note" hidden aria-live="polite" style="margin-top:12px">
+            <strong>Dieser Wunschtermin ist leider schon vergeben.</strong>
+            <p>Weil wir nur ein Gartenzimmer haben, können wir an diesem Tag keine weitere Reservierung annehmen.</p>
+            <p><strong>Aber diese Termine könntest du noch bekommen:</strong></p>
+            <div id="alternativeDateButtons" style="display:flex;gap:10px;flex-wrap:wrap"></div>
+            <small>Unverbindliche Alternativen anhand des zuletzt geprüften Kalenders. Die Verfügbarkeit wird bei Auswahl erneut geprüft.</small>
+          </section>
 
           <div>
             <label>Zusatzleistungen</label>
@@ -1898,6 +1905,59 @@
       };
     }
 
+    function dateISO(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      return y + "-" + m + "-" + d;
+    }
+
+    function renderAlternativeDates(availability) {
+      const section = document.getElementById("alternativeDates");
+      const buttons = document.getElementById("alternativeDateButtons");
+      if (!section || !buttons) return;
+      section.hidden = true;
+      buttons.replaceChildren();
+      if (availability.state !== "blocked" || !liveBookingCalendarLoaded || !calendarIsFresh()) return;
+      const first = parseDate(arrival.value);
+      const nightsRequested = nightCount();
+      if (!first || nightsRequested < 1 || nightsRequested > 30) return;
+      const candidates = [];
+      // Offer the same length of stay, within the next 60 calendar days.
+      // The checkout day is not an occupied night.
+      for (let offset = 1; offset <= 60 && candidates.length < 3; offset++) {
+        const start = new Date(first);
+        start.setDate(start.getDate() + offset);
+        const end = new Date(start);
+        end.setDate(end.getDate() + nightsRequested);
+        const conflicts = gartenzimmerBookingBlocks.some(block =>
+          overlaps(start, end, parseDate(block.start), parseDate(block.end))
+        );
+        if (!conflicts) candidates.push({ start: dateISO(start), end: dateISO(end) });
+      }
+      if (!candidates.length) {
+        const note = document.createElement("p");
+        note.textContent = "Für die nächsten 60 Tage sind anhand des aktuellen Kalenderstands keine bestätigbaren Alternativen verfügbar.";
+        buttons.append(note);
+      }
+      for (const date of candidates) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "btn secondary";
+        button.textContent = new Date(date.start + "T12:00:00").toLocaleDateString(
+          LANGUAGES[currentLang].locale, { day: "2-digit", month: "short", year: "numeric" }
+        );
+        button.addEventListener("click", () => {
+          arrival.value = date.start;
+          departure.value = date.end;
+          loadLiveBookingCalendar(); // Always recheck before submitting.
+          arrival.focus();
+        });
+        buttons.append(button);
+      }
+      section.hidden = false;
+    }
+
     function calculate() {
       updateRoomChoices();
       const n = nightCount();
@@ -1923,6 +1983,7 @@
       const availability = availabilityText();
       availabilityStatus.className = "availability-status " + availability.state;
       availabilityStatus.textContent = availability.text;
+      renderAlternativeDates(availability);
       paypalBox.classList.toggle("hidden", availability.state !== "ok");
       return sum;
     }
